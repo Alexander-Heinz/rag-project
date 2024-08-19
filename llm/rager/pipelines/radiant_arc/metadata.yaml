@@ -1,0 +1,122 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/data_loaders/phantasmal_shard.py
+  downstream_blocks:
+  - halcyon_hill
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - ingest
+  has_callback: false
+  language: python
+  name: Phantasmal shard
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: phantasmal_shard
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/transformers/wonderful_astronomer.py
+  downstream_blocks:
+  - red_shield
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: wonderful astronomer
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - halcyon_hill
+  uuid: wonderful_astronomer
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/transformers/halcyon_hill.py
+  downstream_blocks:
+  - wonderful_astronomer
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: halcyon hill
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - phantasmal_shard
+  uuid: halcyon_hill
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/data_exporters/red_shield.py
+  downstream_blocks:
+  - primal_smoke
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: red shield
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - wonderful_astronomer
+  uuid: red_shield
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/transformers/primal_smoke.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: primal smoke
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - red_shield
+  uuid: primal_smoke
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-08-19 12:53:03.343861+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Radiant arc
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: radiant_arc
+variables:
+  index_name: documents_20240819_1927_20240819_2122_20240819_2254_20240819_4537_20240819_0157_20240819_1436_20240819_1541_20240819_2009_20240819_2305
+variables_dir: /home/src/mage_data/rager
+widgets: []
